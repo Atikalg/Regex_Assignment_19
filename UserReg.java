@@ -7,17 +7,18 @@ import java.util.regex.Pattern;
 /**
  * @author atik
  *	Validation of user data
- * added mobile number validation
+ * added password  validation Rule1
  */
 public class UserReg {
 	Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
 		UserReg userReg = new UserReg();
 		//function call
-//		userReg.checkFirstName();
-//		userReg.checkLastName();
-//		userReg.checkEmail();
+		userReg.checkFirstName();
+		userReg.checkLastName();
+		userReg.checkEmail();
 		userReg.checkMobileNo();
+		userReg.checkPassword();
 	}
 	//validating first name  of user
 	public void checkFirstName() {
@@ -61,6 +62,17 @@ public class UserReg {
 		}
 		else {
 			System.out.println("Mobile Number invalid");
+		}
+	}
+	//Validating Password
+	public void checkPassword() {
+		System.out.println("Enter Password : ");
+		String password = sc.nextLine();
+		if(Pattern.matches("^[a-zA-Z0-9+-_!@#$%^&*().]{8,}",password)){
+			System.out.println("password is valid");
+		}
+		else {
+			System.out.println("password is invalid");
 		}
 	}
 
