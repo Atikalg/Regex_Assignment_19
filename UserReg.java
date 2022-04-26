@@ -11,6 +11,7 @@ public class UserReg {
 		//function call
 		userReg.checkFirstName();
 		userReg.checkLastName();
+		userReg.checkEmail();
 	}
 	//validating first name  of user
 	public void checkFirstName() {
@@ -32,6 +33,17 @@ public class UserReg {
 		}
 		else {
 			System.out.println("Last name invalid");
+		}
+	}
+	//validating email 
+	public void checkEmail() {
+		System.out.println("Enter Email : ");
+		String email = sc.nextLine();
+		if(Pattern.matches("^[a-zA-Z0-9]+([.][a-zA-Z0-9]+)*[@][a-z]+[.][a-z]{2,3}([.][a-z]{2})?$",email)){
+			System.out.println("Email is valid");
+		}
+		else {
+			System.out.println("Email is invalid");
 		}
 	}
 
