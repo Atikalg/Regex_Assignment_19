@@ -4,14 +4,20 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * @author atik
+ *	Validation of user data
+ * added mobile number validation
+ */
 public class UserReg {
 	Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
 		UserReg userReg = new UserReg();
 		//function call
-		userReg.checkFirstName();
-		userReg.checkLastName();
-		userReg.checkEmail();
+//		userReg.checkFirstName();
+//		userReg.checkLastName();
+//		userReg.checkEmail();
+		userReg.checkMobileNo();
 	}
 	//validating first name  of user
 	public void checkFirstName() {
@@ -39,11 +45,22 @@ public class UserReg {
 	public void checkEmail() {
 		System.out.println("Enter Email : ");
 		String email = sc.nextLine();
-		if(Pattern.matches("^[a-zA-Z0-9]+([.][a-zA-Z0-9]+)*[@][a-z]+[.][a-z]{2,3}([.][a-z]{2})?$",email)){
+		if(Pattern.matches("^[a-zA-Z]+([.][a-zA-Z0-9]+)*[@][a-z]+[.][a-z]{2,3}([.][a-z]{2})?$",email)){
 			System.out.println("Email is valid");
 		}
 		else {
 			System.out.println("Email is invalid");
+		}
+	}
+	//validating mobile number
+	public void checkMobileNo() {
+		System.out.println("Enter Phone No : ");
+		String mobileNo = sc.nextLine();
+		if( Pattern.matches("[0-9]{2}+[ ][0-9]{10}$",mobileNo)){
+			System.out.println("Mobile Number is valid");
+		}
+		else {
+			System.out.println("Mobile Number invalid");
 		}
 	}
 
