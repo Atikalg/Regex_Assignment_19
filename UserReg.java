@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 /**
  * @author atik
  *	Validation of user data
- * Added password  validation Rule3
+ * Added password  validation Rule4
  */
 public class UserReg {
 	Scanner sc = new Scanner(System.in);
@@ -68,7 +68,7 @@ public class UserReg {
 	public void checkPassword() {
 		System.out.println("Enter Password : ");
 		String password = sc.nextLine();
-		if(Pattern.matches("^(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9+-_!@#$%^&*(){}'.,]{8,}$",password)){
+		if(Pattern.matches("^(?=.*[A-Z])(?=.*[0-9])(?=.*[!#@%^&*(){}])[a-zA-Z0-9+-_!@#$%^&*(){}'.,]{8,}$",password)){
 			System.out.println("password is valid");
 		}
 		else {
